@@ -1,0 +1,7 @@
+﻿  CPiAdapter.cpp
+c:\00myfiles\testcode\testfoc\testfoc\testfoc\cpiadapter.cpp(24): warning C4305: '=': truncation from 'double' to 'float'
+c:\00myfiles\testcode\testfoc\testfoc\testfoc\cpiadapter.cpp(25): warning C4305: '=': truncation from 'double' to 'float'
+c:\00myfiles\testcode\testfoc\testfoc\testfoc\cpiadapter.cpp(70): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+  TestMain.cpp
+  Generating Code...
+  TestFoc.vcxproj -> C:\00MyFiles\TestCode\TestFoc\TestFoc\Debug\TestFoc.exe

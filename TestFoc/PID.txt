@@ -1,0 +1,77 @@
+/*定义结构体和公用体*/
+
+typedef struct
+
+{
+
+	float setpoint;       //设定值
+
+	float proportiongain;     //比例系数
+
+	float integralgain;      //积分系数
+
+	float derivativegain;    //微分系数
+
+	float lasterror;     //前一拍偏差
+
+	float result; //输出值
+
+	float integral;//积分值
+
+	float maximum;//最大值
+
+	float minimum;//最小值
+
+}PID;
+
+void PIDRegulation(PID *vPID, float processValue)
+
+{
+
+	float thisError;
+
+	thisError = vPID->setpoint - processValue;
+
+	if (vPID->result>vPID->maximum)
+
+	{
+
+		if (thisError <= 0)
+
+		{
+
+			vPID->integral += thisError;
+
+		}
+
+	}
+
+	else if (vPID->result<vPID->minimum)
+
+	{
+
+		if (thisError >= 0)
+
+		{
+
+			vPID->integral += thisError;
+
+		}
+
+	}
+
+	else
+
+	{
+
+		vPID->integral += thisError;
+
+	}
+
+
+
+	vPID->result = vPID->proportiongain*thisError + vPID->integralgain*vPID->integral + vPID->derivativegain*(thisError - vPID->lasterror);
+
+	vPID->lasterror = thisError;
+
+}
