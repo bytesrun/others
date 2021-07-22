@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 3.1)
+project(snake)
+add_definitions(-std=c++11)
+aux_source_directory(. SRCS)
+add_executable(snake ${SRCS})
